@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Icon, Label, Menu, Table } from 'semantic-ui-react'
 import EmployeeService from '../../../services/employeeService';
-
+import { Link } from "react-router-dom";
+import { Button, Card } from "semantic-ui-react";
 
 export default function EmployeeList() {
 
@@ -27,12 +28,14 @@ export default function EmployeeList() {
                 <Table.Body>
                     {
                         employees.map((employee) => (
-                            <Table.Row key = {employee.id}>
+                            <Table.Row key={employee.id}>
                                 <Table.Cell>{employee.firstName}</Table.Cell>
                                 <Table.Cell>{employee.lastName}</Table.Cell>
                                 <Table.Cell>{employee.email}</Table.Cell>
                                 <Table.Cell>{employee.birthDate}</Table.Cell>
+                                
                             </Table.Row>
+
                         ))
                     }
 

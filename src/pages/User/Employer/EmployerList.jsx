@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import EmployerService from '../../../services/employerService';
 import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import JobAdvertisementService from '../../../services/jobAdvertisementService';
+import { Link, useParams } from "react-router-dom";
+import { Button, Card } from "semantic-ui-react";
+
 export default function EmployerList() {
 
-    const [employers, setemployers] = useState([]);
+
+    const [employers, setEmployers] = useState([]);
+    const [jobAdvertisement, setjobAdvertisement] = useState([]);
+
 
     useEffect(() => {
         let employerService = new EmployerService();
-        employerService.getEmployers().then(result => setemployers(result.data.data));
+        let jobAdvertisementService = new JobAdvertisementService();
+        employerService.getEmployers().then((result) => setEmployers(result.data.data));
     }, []);
 
 

@@ -4,7 +4,7 @@ import { Menu } from 'semantic-ui-react'
 export default function SideBar() {
     return (
         <div>
-            <Menu vertical inverted size="top">
+            {/* <Menu vertical inverted size="top">
 
                 <Menu.Item
                     name='user'
@@ -29,7 +29,7 @@ export default function SideBar() {
 
                     <p>Employer</p>
                 </Menu.Item>
-            </Menu>
+            </Menu> */}
 
         </div>
     )
