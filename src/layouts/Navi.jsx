@@ -26,31 +26,28 @@ export default function Navi() {
 
             <Menu size="large" inverted stackable>
                 <Container>
+
                     <Menu.Item name="Home" as={Link} to={"/"}>
                         <Icon name="home" />Home
                     </Menu.Item>
+                    
                     <Menu.Item name='user' as={Link} to={"/employees"}
-
                     >
-
                         <p>Employee</p>
                     </Menu.Item>
 
                     <Menu.Item
                         name='jobAdvertisement' as={Link} to={"/jobAdvertisements"}
-
                     >
-
                         <p>Job Advertisements</p>
                     </Menu.Item>
 
                     <Menu.Item
                         name='user' as={Link} to={"/employers"}
-
                     >
-
-                        <p>Employer</p>
+                        <p>Employer</p>   
                     </Menu.Item>
+
                     <Menu.Menu position="right" style={{ margin: '0.5em' }}>
                         <Button primary as={Link} to={"/jobAdForm"}>
                             Add Job Advertisement

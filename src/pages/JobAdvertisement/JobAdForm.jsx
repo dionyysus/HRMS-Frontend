@@ -27,7 +27,7 @@ export default function JobAdForm() {
         jobMaxWage: Yup.number().min(0, "Can't be less 0").required("This field is required")
     })
 
-    //const history = useHistory();
+    const history = useHistory();
 
     const formik = useFormik({
         initialValues: {
@@ -45,9 +45,9 @@ export default function JobAdForm() {
         onSubmit: (values) => {
             values.employerId = 1;
             jobAdvertisementService.addJobAd(values).then(result => console.log(result.data.data));
-            //alert("Job Advertisement was added. It will be listed after the system employee approves.");
-            //history.push("/jobAdvertisements");
-            //console.log(values)
+            alert("Job Advertisement was added. It will be listed after the system employee approves.");
+            history.push("/jobAdvertisements");
+            console.log(values)
         },
     });
 
@@ -70,10 +70,10 @@ export default function JobAdForm() {
     }, []);
 
 
-    const workHoursOption = workHours.map((workHours, index) => ({
+    const workHoursOption = workHours.map((work, index) => ({
         key: index,
-        text: workHours.workHours,
-        value: workHours.workHoursId,
+        text: work.workHours,
+        value: work.workHoursId,
     }));
 
     const workTypeOption = workTypes.map((workType, index) => ({

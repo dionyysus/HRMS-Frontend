@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, GridRow } from 'semantic-ui-react'
+import { Grid, GridRow} from 'semantic-ui-react'
 import JobAdvertisementList from '../pages/JobAdvertisement/JobAdvertisementList'
 import EmployeeList from '../pages/User/Employee/EmployeeList'
 import EmployerList from '../pages/User/Employer/EmployerList'
@@ -10,6 +10,8 @@ import SignedOut from './SignedOut'
 import SignUp from './SignUp'
 import JobAdDetail from '../pages/JobAdvertisement/JobAdDetail'
 import JobAdForm from '../pages/JobAdvertisement/JobAdForm'
+import JobAdConfirm from '../pages/JobAdvertisement/JobAdConfirm'
+import Navi from './Navi'
 
 export default function Dashboard() {
     return (
@@ -19,17 +21,16 @@ export default function Dashboard() {
                     <Grid.Column width={4}>
                         <SideBar />
                     </Grid.Column>
-                    <Grid.Column width={12}>
+                    <Grid.Column width={9}>
                         <Route path = "/employees" component = {EmployeeList}/>
                         <Route path = "/employers" component = {EmployerList}/>
-                        <Route path = "/jobAdvertisements" component = {JobAdvertisementList}/>
+                        <Route exact path = "/jobAdvertisements" component = {JobAdvertisementList}/>
                         <Route path = "/signIn" component = {SignedIn}/>
                         <Route path = "/signOut" component = {SignedOut}/>
                         <Route path = "/signUp" component = {SignUp}/>
-                        <Route path = "/jobAdDetail:id" component = {JobAdDetail}/>
+                        <Route exact path = "/jobAdvertisements/:id" component = {JobAdDetail}/>
                         <Route path = "/jobAdForm" component = {JobAdForm}/>
-
-
+                        <Route exact path = "/jobAdConfirm" component = {JobAdConfirm}/>
                     </Grid.Column>
                 </GridRow>
             </Grid>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Dropdown, Image, Button, Form, Header, Message, Segment } from 'semantic-ui-react'
+import { Image, Button, Form, Header, Message, Segment } from 'semantic-ui-react'
 import { Link } from "react-router-dom";
 
 export default function SignedIn() {
@@ -23,7 +23,7 @@ export default function SignedIn() {
                         placeholder="Password"
                         type = "password"
                     />
-                    <Button color = "purple blue" fluid size = "large" disabled>
+                    <Button color = "purple blue" fluid size = "large" >
                         Login
                     </Button>
                 </Segment>

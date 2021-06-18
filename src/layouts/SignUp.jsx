@@ -67,7 +67,7 @@ export default function SignUp() {
                         </GridColumn>
                     </Grid>
                     <br />
-                    <Button color="purple blue" fluid size="large" disabled>
+                    <Button color="purple blue" fluid size="large" >
                         Sign Up
                     </Button>
                 </Segment>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Icon, Label, Menu, Table } from 'semantic-ui-react'
+import { Icon, Button, Menu, Table } from 'semantic-ui-react'
 import JobAdvertisementService from '../../services/jobAdvertisementService';
+import { Link } from "react-router-dom";
 
 export default function JobAdvertisementList() {
 
@@ -13,6 +14,7 @@ export default function JobAdvertisementList() {
 
     return (
         <div>
+            
             <Table celled color={"black"}>
                 <Table.Header>
                     <Table.Row>
@@ -21,18 +23,28 @@ export default function JobAdvertisementList() {
                         <Table.HeaderCell>Position</Table.HeaderCell>
                         <Table.HeaderCell>Work Type</Table.HeaderCell>
                         <Table.HeaderCell>Work Time</Table.HeaderCell>
+                        <Table.HeaderCell>Details</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
                 <Table.Body>
                     {
-                        jobAdvertisements.map((jobAdvertisement) => (
-                            <Table.Row key={jobAdvertisement.id}>
+                        jobAdvertisements.map(jobAdvertisement => (
+                            
+                            <Table.Row >
                                 <Table.Cell>{jobAdvertisement.employer.companyName}</Table.Cell>
                                 <Table.Cell>{jobAdvertisement.city.cityName}</Table.Cell>
                                 <Table.Cell>{jobAdvertisement.jobPosition.positionName}</Table.Cell>
                                 <Table.Cell>{jobAdvertisement.work.workType}</Table.Cell>
-                                <Table.Cell>{jobAdvertisement.work.workHours}</Table.Cell>
+                                <Table.Cell>{jobAdvertisement.workHours.workHours}</Table.Cell>
+                                <Table.Cell>
+                                    <Button as={Link} to={`/jobAdvertisements/${jobAdvertisement.jobAdvertisementId}`}
+                                        content="See Details"
+                                        icon="right arrow"
+                                        labelPosition="right"
+                                    />
+                                </Table.Cell>
+                                
                             </Table.Row>
                         ))
                     }

@@ -5,14 +5,14 @@ import JobAdvertisementService from '../../services/jobAdvertisementService';
 
 export default function JobAdDetail() {
 
-    let { id } = useParams();
+    let { jobAdvertisementId } = useParams();
 
     const [jobAdvertisement, setJobAdvertisement] = useState({});
 
     useEffect(() => {
-        let jobAdvertisement = new JobAdvertisementService();
-        jobAdvertisement.getByJobId(id).then(result => setJobAdvertisement(result.data.data));
-    }, [id]);
+        let jobAdvertisementService = new JobAdvertisementService();
+        jobAdvertisementService.getById(jobAdvertisementId).then(result => setJobAdvertisement(result.data.data));
+    }, [jobAdvertisementId]);
 
 
     return (
@@ -29,7 +29,7 @@ export default function JobAdDetail() {
                             </Table.Header>
 
                             <Table.Body>
-                                <Table.Row>
+                                <Table.Row >
                                     <Table.Cell>Job Position</Table.Cell>
                                     <Table.Cell>{jobAdvertisement.jobPosition?.positionName}</Table.Cell>
                                 </Table.Row>
@@ -46,7 +46,7 @@ export default function JobAdDetail() {
 
                                 <Table.Row>
                                     <Table.Cell>Working Hours</Table.Cell>
-                                    <Table.Cell>{jobAdvertisement.work?.workHours}</Table.Cell>
+                                    <Table.Cell>{jobAdvertisement.workHours?.workHours}</Table.Cell>
                                 </Table.Row>
 
                                 <Table.Row>
@@ -73,18 +73,23 @@ export default function JobAdDetail() {
                                     <Table.Cell>Application Deadline</Table.Cell>
                                     <Table.Cell>{jobAdvertisement.jobAppDeadline}</Table.Cell>
                                 </Table.Row>
+
+                                <Table.Row>
+                                    <Table.Cell>Description</Table.Cell>
+                                    <Table.Cell>{jobAdvertisement.jobDescription}</Table.Cell>
+                                </Table.Row>
                             </Table.Body>
                         </Table>
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
 
-            <Card fluid>
+            {/* <Card fluid>
                 <Card.Content header="Description" />
                 <Card.Content>
                     {jobAdvertisement.jobDescription}
                 </Card.Content>
-            </Card>
+            </Card> */}
         </div>
     )
 }

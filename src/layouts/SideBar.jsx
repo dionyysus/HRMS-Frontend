@@ -1,12 +1,13 @@
 import React from 'react'
 import { Menu } from 'semantic-ui-react'
+import { Link } from "react-router-dom";
 
 export default function SideBar() {
     return (
         <div>
-            {/* <Menu vertical inverted size="top">
+            <Menu vertical inverted size="top">
 
-                <Menu.Item
+                <Menu.Item as={Link} to={"/employees"}
                     name='user'
 
                 >
@@ -14,7 +15,7 @@ export default function SideBar() {
                     <p>Employee</p>
                 </Menu.Item>
 
-                <Menu.Item
+                <Menu.Item as={Link} to={"/jobAdvertisements"}
                     name='jobAdvertisement'
 
                 >
@@ -22,14 +23,22 @@ export default function SideBar() {
                     <p>Job Advertisements</p>
                 </Menu.Item>
 
-                <Menu.Item
+                <Menu.Item as={Link} to={"/employers"}
                     name='user'
 
                 >
 
                     <p>Employer</p>
                 </Menu.Item>
-            </Menu> */}
+
+                <Menu.Item as={Link} to={"/jobAdConfirm"}
+                    name='jobAdvertisement'
+
+                >
+
+                    <p> Confirm Job Advertisement</p>
+                </Menu.Item>
+            </Menu>
 
         </div>
     )
