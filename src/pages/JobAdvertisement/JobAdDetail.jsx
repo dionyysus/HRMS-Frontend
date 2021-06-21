@@ -84,12 +84,6 @@ export default function JobAdDetail() {
                 </Grid.Row>
             </Grid>
 
-            {/* <Card fluid>
-                <Card.Content header="Description" />
-                <Card.Content>
-                    {jobAdvertisement.jobDescription}
-                </Card.Content>
-            </Card> */}
         </div>
     )
 }

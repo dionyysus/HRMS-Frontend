@@ -16,6 +16,7 @@ export default class JobAdvertisementService {
    jobAdChangeConfirmedFalseToTrue(jobAdvertisementId){
        return axios.post("http://localhost:8080/api/jobAdvertisement/changeConfirmedFalseToTrue?id="+jobAdvertisementId);
    }
+   
    jobAdRemove(jobAdvertisementId){
        return axios.post("http://localhost:8080/api/jobAdvertisement/remove?id="+jobAdvertisementId);
    }
